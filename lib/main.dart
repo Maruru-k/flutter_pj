@@ -1,22 +1,43 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(
-    Center(
-      child: Text(
-        "Hello Flutter",
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-          color: Colors.red,
-          fontSize: 50,
-          fontWeight: FontWeight.bold,
+  runApp(MyStatelessWidget());
+}
+
+class MyStatelessWidget extends StatelessWidget {
+
+  final double topMargin = 30;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      alignment: Alignment.topCenter,
+      textDirection: TextDirection.ltr,
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(top: topMargin),
+          color: Colors.white,
         ),
-        textScaleFactor: 2,
-        textAlign: TextAlign.center,
-      ),
-    ),
-  );
+        Container(
+          alignment: Alignment.topCenter,
+          margin: EdgeInsets.only(top: topMargin),
+          padding: EdgeInsets.only(top: 20),
+          color: Colors.teal,
+          height: 90,
+          child: const Text(
+            "Hello Flutter",
+            textDirection: TextDirection.ltr,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.amberAccent,
+              fontWeight: FontWeight.bold,
+              letterSpacing: -2.5,
+              fontSize: 50,
+              height: 1,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
 }
