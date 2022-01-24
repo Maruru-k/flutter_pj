@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,17 +22,20 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: SafeArea(child: Center(child: tabs[_selectedIndex])),
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        //iconSize: 28,
+        //selectedFontSize: 16,
+        //unselectedFontSize: 14,
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_outlined),
+            icon: SvgPicture.asset("assets/icons/projects.svg"),
             label: "Projects",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.report_outlined),
+            icon: SvgPicture.asset("assets/icons/report.svg"),
             label: "Reports",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
+            icon: SvgPicture.asset("assets/icons/profile.svg"),
             label: "Profile",
           ),
         ],
